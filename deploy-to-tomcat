@@ -1,5 +1,5 @@
 node{
-   def tomcatIp = '172.31.14.131'
+   def tomcatIp = '172.31.24.62'
    def tomcatUser = 'ec2-user'
    def stopTomcat = "ssh ${tomcatUser}@${tomcatIp} /opt/tomcat8/bin/shutdown.sh"
    def startTomcat = "ssh ${tomcatUser}@${tomcatIp} /opt/tomcat8/bin/startup.sh"
@@ -10,7 +10,7 @@ node{
 	        url: 'https://github.com/javahometech/myweb'
    }
    stage('Maven Build'){
-        def mvnHome = tool name: 'maven3', type: 'maven'
+        def mvnHome = tool name: 'maven1', type: 'maven'
 		sh "${mvnHome}/bin/mvn clean package"
    }
    
